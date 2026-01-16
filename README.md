@@ -158,6 +158,7 @@ seguridad-web-docker/
 ├── Dockerfile              # Imagen personalizada de la app
 ├── .dockerignore          # Archivos excluidos de la imagen
 ├── .env                    # Variables de entorno (NO subir a Git)
+├── .env.example           # Variables de entorno (ejemplo para el usuario)
 ├── .gitignore             # Archivos ignorados por Git
 ├── README.md              # Esta documentación
 ├── DOCKER_HUB.md          # Guía para publicar en Docker Hub
@@ -312,5 +313,24 @@ Ver guía completa en `DOCKER_HUB.md` para más detalles.
 - [x] Seguridad implementada
 
 ---
+
+## 🔧 Configuración Inicial
+
+1. Clona el repositorio:
+   ```bash
+   git clone [https://github.com/tu-usuario/blog-seguridad-web-docker.git](https://github.com/tu-usuario/blog-seguridad-web-docker.git)
+   cd blog-seguridad-web-docker
+
+2. Crea tu archivo .env desde el ejemplo:
+   ```bash
+   cp .env.example .env
+
+3. Edita .env con tus credenciales:
+   ```bash
+   notepad .env  # Windows
+
+4. Inicia la aplicacion
+   ```bash
+   docker-compose up -d
 
 **¡Proyecto listo para usar!** 🎉

@@ -26,7 +26,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: tu-usuario/blog-seguridad-web:latest
+    image: rosaisabel/blog-seguridad-web:latest
     container_name: blog_app
     restart: always
     depends_on:
