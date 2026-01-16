@@ -1,0 +1,15 @@
+.env
+
+mysql_data/
+postgres_data/
+wordpress_data/
+
+*.log
+*.sql.backup
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+node_modules/
+vendor/

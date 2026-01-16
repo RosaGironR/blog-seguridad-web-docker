@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+docker-compose.yml
+.env
+mysql_data
+wordpress_data
+*.md
+.DS_Store
+Thumbs.db
