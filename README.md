@@ -66,7 +66,7 @@ Páginas disponibles:
 2. Credenciales:
    - Servidor: `db`
    - Usuario: `blog_user`
-   - Contraseña: `blog_password123`
+   - Contraseña: `cambiar_por_password_seguro`
 3. Verás la base de datos `blog_db` con tablas pre-creadas
 
 ## 📊 Estructura de la Base de Datos
