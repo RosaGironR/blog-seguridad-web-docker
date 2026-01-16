@@ -118,7 +118,7 @@ docker-compose down -v
 ```bash
 docker exec -it blog_mysql mysql -u blog_user -p
 ```
-Contraseña: `blog_password123`
+Contraseña: (valor de MYSQL_PASSWORD en tu .env)
 
 ### Backup de la base de datos
 ```bash
