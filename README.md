@@ -143,11 +143,11 @@ docker exec -i blog_mysql mysql -u blog_user -pblog_password123 blog_db < backup
 
 ### Credenciales por defecto (CAMBIAR en producción)
 
-```env
-MYSQL_ROOT_PASSWORD=rootpassword123
+```env.example
+MYSQL_ROOT_PASSWORD=cambiar_por_password_seguro
 MYSQL_DATABASE=blog_db
 MYSQL_USER=blog_user
-MYSQL_PASSWORD=blog_password123
+MYSQL_PASSWORD=cambiar_por_password_seguro
 ```
 
 ## 📁 Estructura del Proyecto
