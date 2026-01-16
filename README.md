@@ -63,10 +63,10 @@ Páginas disponibles:
 ### 5. Acceder a phpMyAdmin
 
 1. Abre http://localhost:8081
-2. Credenciales:
+2. Credenciales (las que configuraste en tu [.env](cci:7://file:///d:/ProyectosDocker/seguridad-web-docker/.env:0:0-0:0)):
    - Servidor: `db`
-   - Usuario: `blog_user`
-   - Contraseña: `cambiar_por_password_seguro`
+   - Usuario: `blog_user` (valor de `MYSQL_USER`)
+   - Contraseña: (valor de `MYSQL_PASSWORD` en tu [.env](cci:7://file:///d:/ProyectosDocker/seguridad-web-docker/.env:0:0-0:0))
 3. Verás la base de datos `blog_db` con tablas pre-creadas
 
 ## 📊 Estructura de la Base de Datos
@@ -122,12 +122,17 @@ Contraseña: `blog_password123`
 
 ### Backup de la base de datos
 ```bash
-docker exec blog_mysql mysqldump -u blog_user -pblog_password123 blog_db > backup_$(date +%Y%m%d).sql
+# Backup de la base de datos
+docker exec blog_mysql mysqldump -u blog_user -p blog_db > backup_$(date +%Y%m%d).sql
+
+# Backup usando variables de entorno
+docker exec blog_mysql sh -c 'mysqldump -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE' > backup_$(date +%Y%m%d).sql
 ```
 
 ### Restaurar backup
 ```bash
-docker exec -i blog_mysql mysql -u blog_user -pblog_password123 blog_db < backup_20260112.sql
+# Restaurar backup
+docker exec -i blog_mysql mysql -u blog_user -p blog_db < backup_20260116.sql
 ```
 
 ## 🔒 Seguridad
