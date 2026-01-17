@@ -2,7 +2,7 @@
 set -e
 
 echo "Starting PHP-FPM..."
-php-fpm8.2 -D
+php-fpm -D
 
 echo "Starting Nginx..."
 nginx -g 'daemon off;'
