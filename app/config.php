@@ -7,5 +7,5 @@ define('DB_CHARSET', 'utf8mb4');
 
 date_default_timezone_set('America/New_York');
 
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
