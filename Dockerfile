@@ -33,5 +33,5 @@ EXPOSE 80
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD curl -f http://localhost/ || exit 1
 
-# Comando de inicio
-CMD ["apache2-foreground"]
+# Script de inicio para Nginx y PHP-FPM
+CMD service php8.2-fpm start && nginx -g 'daemon off;'
