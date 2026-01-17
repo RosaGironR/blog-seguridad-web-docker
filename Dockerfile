@@ -7,9 +7,11 @@ LABEL version="1.0"
 # Instalar extensiones de PHP necesarias
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Deshabilitar MPMs conflictivos y habilitar solo mpm_prefork
-RUN a2dismod mpm_event mpm_worker 2>/dev/null || true
-RUN a2enmod mpm_prefork
+# Solución robusta para MPM: Eliminar configuraciones conflictivas
+RUN a2dismod mpm_event mpm_worker 2>/dev/null || true && \
+    rm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.* && \
+    a2enmod mpm_prefork && \
+    echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Habilitar mod_rewrite para Apache
 RUN a2enmod rewrite
