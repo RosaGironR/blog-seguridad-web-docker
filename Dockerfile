@@ -17,6 +17,10 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN rm -f /etc/nginx/sites-enabled/default
 COPY nginx.conf /etc/nginx/sites-enabled/default
 
+# Copiar script de inicio
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 # Copiar código de la aplicación
 COPY app/ /var/www/html/
 
@@ -32,4 +36,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD curl -f http://localhost/ || exit 1
 
 # Script de inicio para Nginx y PHP-FPM
-CMD service php8.2-fpm start && nginx -g 'daemon off;'
+CMD ["/start.sh"]
