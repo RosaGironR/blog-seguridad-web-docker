@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.env.example
+mysql_data/
+wordpress_data/
+*.log
+*.sql.backup
+README.md
+DOCKER_HUB.md
+INSTRUCCIONES.md
+docker-compose.yml
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+vendor/
